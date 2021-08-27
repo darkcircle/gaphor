@@ -389,8 +389,6 @@ def upgrade_generalization_arrow_direction(elem):
             elif name == "tail-connection":
                 tail_ids = refids
         if head_ids and tail_ids:
-            elem.references["head-connection"], elem.references["tail-connection"] = (
-                tail_ids,
-                head_ids,
-            )
+            elem.references["head-connection"] = tail_ids
+            elem.references["tail-connection"] = head_ids
     return elem
